@@ -18,16 +18,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 LOCAL_PATH := device/samsung/i9500
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/samsung/i9500-kernel/zImage-dtb
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES := \
-    $(LOCAL_KERNEL):kernel
-
-
 # overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
